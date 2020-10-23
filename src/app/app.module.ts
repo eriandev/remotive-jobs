@@ -2,14 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { SearchbarComponent } from './components/searchbar/searchbar.component';
-import { HeroComponent } from './components/hero/hero.component';
+import { SearchzoneComponent } from './components/searchzone/searchzone.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchbarComponent,
-    HeroComponent
+    SearchzoneComponent
   ],
   imports: [
     BrowserModule
