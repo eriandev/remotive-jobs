@@ -1,7 +1,76 @@
 <aside>
-  <span>Location</span>
+  <input id="fulltime" type="checkbox" />
+  <label for="fulltime">
+    <span>
+      <svg>
+        <use xlink:href="#check"></use>
+      </svg>
+    </span>
+    <span>Full time</span>
+  </label>
+
+  <span class="location">Location</span>
   <div>
     <img src="assets/icons/public.svg" alt="">
     <input type="text" placeholder="City, state, zip code or country">
   </div>
+
+  <ul>
+    <li>
+      <input id="london" type="checkbox" />
+      <label for="london">
+        <span>
+          <svg>
+            <use xlink:href="#check"></use>
+          </svg>
+        </span>
+        <span>London</span>
+      </label>
+    </li>
+
+    <li>
+      <input id="amsterdam" type="checkbox" />
+      <label for="amsterdam">
+        <span>
+          <svg>
+            <use xlink:href="#check"></use>
+          </svg>
+        </span>
+        <span>Amsterdam</span>
+      </label>
+    </li>
+
+    <li>
+      <input id="newyork" type="checkbox" />
+      <label for="newyork">
+        <span>
+          <svg>
+            <use xlink:href="#check"></use>
+          </svg>
+        </span>
+        <span>New York</span>
+      </label>
+    </li>
+
+    <li>
+      <input id="berlin" type="checkbox" />
+      <label for="berlin">
+        <span>
+          <svg>
+            <use xlink:href="#check"></use>
+          </svg>
+        </span>
+        <span>Berlin</span>
+      </label>
+    </li>
+  </ul>
 </aside>
+
+
+
+<!--SVG Sprites-->
+<svg class="inline-svg">
+  <symbol id="check" viewbox="0 0 12 10">
+    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+  </symbol>
+</svg>
