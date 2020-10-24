@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { SearchzoneComponent } from './components/searchzone/searchzone.component';
+import { FilterzoneComponent } from './components/filterzone/filterzone.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchzoneComponent
+    SearchzoneComponent,
+    FilterzoneComponent
   ],
   imports: [
     BrowserModule
