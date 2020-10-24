@@ -16,6 +16,7 @@
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -83,4 +84,11 @@ button {
   background-image: none;
   -webkit-tap-highlight-color: transparent;
   user-select: none;
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
