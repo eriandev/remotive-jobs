@@ -1,6 +1,10 @@
+:host {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
 aside {
-  margin-top: 2.5rem;
-  max-width: 378px;
+  width: 100%;
 }
 
 div {
@@ -132,6 +136,14 @@ svg {
     width: 100%;
     margin-bottom: 4px;
     display: inline-block;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  :host,
+  aside {
+    max-width: 378px;
+    margin-right: 1rem;
   }
 }
 
