@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { SearchzoneComponent } from './components/searchzone/searchzone.component';
 import { FilterzoneComponent } from './components/filterzone/filterzone.component';
+import { JobslistComponent } from './components/jobslist/jobslist.component';
 import { CardComponent } from './components/card/card.component';
 
 @NgModule({
@@ -11,6 +12,7 @@ import { CardComponent } from './components/card/card.component';
     AppComponent,
     SearchzoneComponent,
     FilterzoneComponent,
+    JobslistComponent,
     CardComponent
   ],
   imports: [

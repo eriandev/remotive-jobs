@@ -1,10 +1,7 @@
-:host {
-  width: 100%;
-  margin-bottom: 1.5rem;
-}
-
+:host,
 aside {
   width: 100%;
+  margin-bottom: 1.5rem;
 }
 
 div {
@@ -142,6 +139,8 @@ svg {
 @media screen and (min-width: 1280px) {
   :host,
   aside {
+    top: 32px;
+    position: sticky;
     max-width: 378px;
     margin-right: 1rem;
   }
