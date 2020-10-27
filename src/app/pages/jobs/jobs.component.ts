@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Job } from 'src/app/interfaces/job';
+import { JobService } from 'src/app/services/job.service';
 
 @Component({
   selector: 'app-job',
@@ -8,13 +10,16 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class JobsComponent implements OnInit {
 
-  public idValue: string;
+  private jobID: string;
+  public jobInfo: Job
 
-  constructor( private _activatedRoute: ActivatedRoute ) { }
+  constructor( private _activatedRoute: ActivatedRoute, private _jobService: JobService ) { }
 
   ngOnInit(): void {
-    this.idValue = this._activatedRoute.snapshot.paramMap.get("id")
-    console.log(this.idValue)
+    this.jobID = this._activatedRoute.snapshot.paramMap.get("id");
+
+    this._jobService.getJobByID(this.jobID)
+      .subscribe( (data: Job) => { this.jobInfo = data });
   }
 
 }

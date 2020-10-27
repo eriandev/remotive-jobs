@@ -33,6 +33,7 @@ h1 {
 }
 
 a {
+  text-decoration: none;
   background-color: transparent;
 }
 
