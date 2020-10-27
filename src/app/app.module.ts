@@ -7,16 +7,19 @@ import { FilterzoneComponent } from './components/filterzone/filterzone.componen
 import { JobslistComponent } from './components/jobslist/jobslist.component';
 import { CardComponent } from './components/card/card.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
     SearchzoneComponent,
     FilterzoneComponent,
     JobslistComponent,
-    CardComponent
+    CardComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
