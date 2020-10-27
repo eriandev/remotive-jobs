@@ -1,0 +1,35 @@
+<div class="job-container">
+  <aside>
+    <a routerLink="/">
+      <img src="assets/icons/back_arrow.svg" alt="">
+      <span>Back to search</span>
+    </a>
+    <h4>How to Apply</h4>
+    <p [innerHTML]="jobInfo.how_to_apply"></p>
+  </aside>
+
+  <main>
+    <h2>
+      <span>{{ jobInfo.title }}</span>
+      <label *ngIf="jobInfo.type === 'Full Time'" class="full-time">Full time</label>
+    </h2>
+
+    <span class="metainfo">
+      <img src="assets/icons/schedule.svg" alt="">
+      <label>{{ jobInfo.created_at }}</label>
+    </span>
+
+    <div class="company">
+      <img class="logo" [src]="jobInfo.company_logo" alt="">
+      <div>
+        <h3>{{ jobInfo.company }}</h3>
+        <span class="metainfo">
+          <img src="assets/icons/public.svg" alt="">
+          <label>{{ jobInfo.location }}</label>
+        </span>
+      </div>
+    </div>
+
+    <p [innerHTML]="jobInfo.description"></p>
+  </main>
+</div>

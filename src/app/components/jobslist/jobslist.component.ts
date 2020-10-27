@@ -11,10 +11,10 @@ export class JobslistComponent implements OnInit {
 
   jobsList: Job[]
 
-  constructor( private jobservice: JobService ) { }
+  constructor( private _jobService: JobService ) { }
 
   ngOnInit(): void {
-    this.jobservice.getAllJobs()
+    this._jobService.getAllJobs()
       .subscribe( (data: Job[]) => { this.jobsList = data });
   }
 
