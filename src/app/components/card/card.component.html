@@ -1,20 +1,20 @@
 <article>
-  <a href="#">
-    <img class="logo" src="assets/images/not-found.png" alt="Logo">
+  <a [href]="'/jobs/' + job.id">
+    <img class="logo" [src]="job.company_logo" alt="Logo">
     <div class="info">
       <div class="content">
-        <span>New York University</span>
-        <h2>Front-End Software Engineer</h2>
-        <label class="full-time">Full time</label>
+        <span>{{ job.company }}</span>
+        <h2>{{ job.title }}</h2>
+        <label *ngIf="job.type === 'Full Time'" class="full-time">Full time</label>
       </div>
       <div class="metadata">
         <span>
           <img src="assets/icons/public.svg" alt="">
-          <label>New York</label>
+          <label>{{ job.location }}</label>
         </span>
         <span>
           <img src="assets/icons/schedule.svg" alt="">
-          <label>5 days ago</label>
+          <label>{{ job.created_at }}</label>
         </span>
       </div>
     </div>

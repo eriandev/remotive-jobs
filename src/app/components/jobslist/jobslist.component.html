@@ -1,1 +1,7 @@
-<app-card *ngFor="let fruit of array"></app-card>
+<ng-container *ngIf="jobsList; else loading">
+  <app-card *ngFor="let job of jobsList" [job]="job"></app-card>
+</ng-container>
+
+<ng-template #loading>
+  Loading...
+</ng-template>
