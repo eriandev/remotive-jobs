@@ -45,6 +45,7 @@ h2 span {
 }
 
 .logo {
+  object-fit: contain;
   display: inline-block;
   height: 3rem;
   width: 3rem;

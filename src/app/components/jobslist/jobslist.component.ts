@@ -5,17 +5,18 @@ import { Job } from 'src/app/interfaces/job'
 @Component({
   selector: 'app-jobslist',
   templateUrl: './jobslist.component.html',
-  styles: []
+  styleUrls: ['./jobslist.component.css']
 })
 export class JobslistComponent implements OnInit {
 
   jobsList: Job[]
+  skeletons = new Array(5);
 
   constructor( private _jobService: JobService ) { }
 
   ngOnInit(): void {
     this._jobService.getAllJobs()
-      .subscribe( (data: Job[]) => { this.jobsList = data });
+      .subscribe( (data: Job[]) => this.jobsList = data );
   }
 
 }

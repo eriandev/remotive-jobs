@@ -5,6 +5,11 @@ section {
   margin-top: 2.5rem;
 }
 
+main {
+  width: 100%;
+  min-height: 10rem;
+}
+
 @media screen and (min-width: 1280px) {
   main {
     margin-left: 1rem;

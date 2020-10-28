@@ -1,6 +1,6 @@
 <article>
   <a [routerLink]="'/jobs/' + job.id">
-    <img class="logo" [src]="job.company_logo" alt="Logo">
+    <img class="logo" [src]="job.company_logo || 'assets/images/not-found.png'" alt="Logo">
     <div class="info">
       <div class="content">
         <span>{{ job.company }}</span>

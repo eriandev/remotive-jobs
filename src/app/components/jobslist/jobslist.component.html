@@ -3,5 +3,22 @@
 </ng-container>
 
 <ng-template #loading>
-  Loading...
+
+  <ng-container *ngFor="let skeleton of skeletons">
+    <article class="card">
+      <figure class="card-image loading"></figure>
+      <div class="card-detail">
+        <span class="loading"></span>
+        <h2 class="loading"></h2>
+        <div class="card-metadata">
+          <label class="full-time loading"></label>
+          <span>
+            <label class="extra loading"></label>
+            <label class="extra loading"></label>
+          </span>
+        </div>
+      </div>
+    </article>
+  </ng-container>
+
 </ng-template>
