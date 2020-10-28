@@ -16,10 +16,10 @@ export class JobsComponent implements OnInit {
   constructor( private _activatedRoute: ActivatedRoute, private _jobService: JobService ) { }
 
   ngOnInit(): void {
-    this.jobID = this._activatedRoute.snapshot.paramMap.get("id");
+    this.jobID = this._activatedRoute.snapshot.paramMap.get('id');
 
     this._jobService.getJobByID(this.jobID)
-      .subscribe( (data: Job) => { this.jobInfo = data });
+      .subscribe( (data: Job) => this.jobInfo = data );
   }
 
 }
