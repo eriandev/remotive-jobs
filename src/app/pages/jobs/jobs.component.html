@@ -1,38 +1,41 @@
 <section class="job-container">
   <aside>
-    <a routerLink="/">
+    <a class="back-link" routerLink="/">
       <img src="assets/icons/back_arrow.svg" alt="Back to search">
-      <span>Back to search</span>
+      <span class="back-to-search">Back to search</span>
     </a>
-    <h4>How to Apply</h4>
+
+    <h4 class="apply-title">How to Apply</h4>
     <ng-container *ngIf="jobInfo; else loading_howToApply">
       <p [innerHTML]="jobInfo.how_to_apply"></p>
     </ng-container>
+
     <ng-template #loading_howToApply>
-      <p class="how-to-apply">
-        <span class="loading"></span>
-        <span class="loading"></span>
+      <p class="apply-content">
+        <span *ngFor="let apply of applyLoading" class="loading"></span>
       </p>
     </ng-template>
   </aside>
 
+
+
   <ng-container *ngIf="jobInfo; else loading_main">
-    <main>
-      <h2>
-        <span>{{ jobInfo.title }}</span>
+    <main class="job-info">
+      <h2 class="job-header">
+        <span class="job-title">{{ jobInfo.title }}</span>
         <label *ngIf="jobInfo.type === 'Full Time'" class="full-time">Full time</label>
       </h2>
 
-      <span class="metainfo">
+      <span class="metadata">
         <img src="assets/icons/schedule.svg" alt="Created at">
         <label>{{ jobInfo.created_at }}</label>
       </span>
 
-      <div class="company">
-        <img class="logo" [src]="jobInfo.company_logo || 'assets/images/not-found.png'" alt="Company logo">
+      <div class="company-info">
+        <img class="company-logo" [src]="jobInfo.company_logo || 'assets/images/not-found.png'" alt="Company logo">
         <div>
-          <h3>{{ jobInfo.company }}</h3>
-          <span class="metainfo">
+          <h3 class="company-name">{{ jobInfo.company }}</h3>
+          <span class="metadata">
             <img src="assets/icons/public.svg" alt="Location">
             <label>{{ jobInfo.location }}</label>
           </span>
@@ -43,38 +46,33 @@
     </main>
   </ng-container>
 
+
+
   <ng-template #loading_main>
     <main class="loading-main">
       <h2 class="full-title">
-        <span class="loading title"></span>
+        <span class="title loading"></span>
         <label class="full-time loading"></label>
       </h2>
 
-      <span class="metainfo">
+      <span class="metadata">
         <img src="assets/icons/schedule.svg" alt="Created at">
-        <label class="extra loading"></label>
+        <label class="creation-date loading"></label>
       </span>
 
-      <div class="company">
-        <figure class="loading logo"></figure>
+      <div class="company-info">
+        <figure class="loading company-logo"></figure>
         <div>
           <h3 class="company-name loading"></h3>
-          <span class="metainfo">
+          <span class="metadata">
             <img src="assets/icons/public.svg" alt="Location">
-            <label class="extra loading"></label>
+            <label class="location loading"></label>
           </span>
         </div>
       </div>
 
       <p>
-        <span class="content loading"></span>
-        <span class="content loading"></span>
-        <span class="content loading"></span>
-        <span class="content loading"></span>
-        <span class="content loading"></span>
-        <span class="content loading"></span>
-        <span class="content loading"></span>
-        <span class="content loading"></span>
+        <span *ngFor="let info of infoLoading" class="content loading"></span>
       </p>
     </main>
   </ng-template>

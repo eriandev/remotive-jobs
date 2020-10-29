@@ -7,7 +7,8 @@ import { Job } from 'src/app/interfaces/job';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  @Input() job: Job;
+
+  @Input() public job: Job;
 
   constructor() { }
 

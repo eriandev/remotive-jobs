@@ -1,66 +1,67 @@
-<aside>
+<aside class="filterzone">
+
   <input id="fulltime" type="checkbox" />
-  <label for="fulltime">
-    <span>
+  <label class="filter-selection" for="fulltime">
+    <span class="filter-check">
       <svg>
         <use xlink:href="#check"></use>
       </svg>
     </span>
-    <span>Full time</span>
+    <span class="filter-name">Full time</span>
   </label>
 
-  <span class="location">Location</span>
-  <div>
-    <img src="assets/icons/public.svg" alt="">
-    <input type="text" placeholder="City, state, zip code or country">
-  </div>
+  <span class="location-text">Location</span>
+  <article class="location-filter">
+    <img class="location-icon" src="assets/icons/public.svg" alt="Location filter">
+    <input class="location-input" type="text" aria-label="City, state, zip code or country" placeholder="City, state, zip code or country">
+  </article>
 
   <ul>
     <li>
       <input id="london" type="checkbox" />
-      <label for="london">
-        <span>
+      <label class="filter-selection" for="london">
+        <span class="filter-check">
           <svg>
             <use xlink:href="#check"></use>
           </svg>
         </span>
-        <span>London</span>
+        <span class="filter-name">London</span>
       </label>
     </li>
 
     <li>
       <input id="amsterdam" type="checkbox" />
-      <label for="amsterdam">
-        <span>
+      <label class="filter-selection" for="amsterdam">
+        <span class="filter-check">
           <svg>
             <use xlink:href="#check"></use>
           </svg>
         </span>
-        <span>Amsterdam</span>
+        <span class="filter-name">Amsterdam</span>
       </label>
     </li>
 
     <li>
       <input id="newyork" type="checkbox" />
-      <label for="newyork">
-        <span>
+      <label class="filter-selection" for="newyork">
+        <span class="filter-check">
           <svg>
             <use xlink:href="#check"></use>
           </svg>
         </span>
-        <span>New York</span>
+        <span class="filter-name">New York</span>
       </label>
     </li>
 
     <li>
       <input id="berlin" type="checkbox" />
-      <label for="berlin">
-        <span>
+      <label class="filter-selection" for="berlin">
+        <span class="filter-check">
           <svg>
             <use xlink:href="#check"></use>
           </svg>
         </span>
-        <span>Berlin</span>
+        <span class="filter-name">Berlin</span>
       </label>
     </li>
   </ul>

@@ -1,55 +1,57 @@
-a {
+.card .card-link {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 1.5rem;
   background: #FFF;
+  margin-bottom: 1.5rem;
   border-radius: 4px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
   user-select: none;
 }
 
-a:hover {
+.card .card-link:hover {
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.05);
 }
 
-.logo {
-  object-fit: contain;
+.card .card-logo {
   display: inline-block;
-  height: 90px;
   width: 90px;
-  border-radius: 4px;
+  height: 90px;
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
   margin-right: 1rem;
   margin-left: 0.75rem;
+  border-radius: 4px;
+  object-fit: contain;
 }
 
-.info {
+.card .card-info {
   display: flex;
   flex-wrap: wrap;
   width: calc(100% - 118px);
 }
 
-.content {
+
+
+.card .card-content {
   color: #334680;
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
 }
 
-.content span {
+.card-content .company-name {
   display: block;
   font-size: 12px;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
-.content h2 {
+.card-content .job-title {
   font-size: 16px;
   font-weight: 500;
   margin-bottom: 1rem;
 }
 
-.full-time {
+.card-content .full-time {
   font-size: 12px;
   font-weight: 700;
   padding: 6px 8px;
@@ -57,7 +59,9 @@ a:hover {
   border: 1px solid #334680;
 }
 
-.metadata {
+
+
+.card .card-footer {
   color: #B9BDCF;
   width: 100%;
   text-align: end;
@@ -68,28 +72,30 @@ a:hover {
   margin-bottom: 1rem;
 }
 
-.metadata>:first-child {
+.card-footer .job-location {
   margin-right: 1.75rem;
 }
 
-.metadata img {
+.card-footer img {
   width: 1rem;
   height: 1rem;
   margin-right: 0.25rem;
 }
 
+
+
 @media screen and (min-width: 1280px) {
-  .info {
+  .card .card-info {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
 
-  .metadata {
+  .card-footer {
     display: flex;
+    align-items: flex-end;
     width: auto;
     max-width: 40%;
     padding-right: 1rem;
-    align-items: flex-end;
   }
 }

@@ -11,7 +11,9 @@ import { JobService } from 'src/app/services/job.service';
 export class JobsComponent implements OnInit {
 
   private jobID: string;
-  public jobInfo: Job
+  public jobInfo: Job;
+  public infoLoading = new Array(10);
+  public applyLoading = new Array(3);
 
   constructor( private _activatedRoute: ActivatedRoute, private _jobService: JobService ) { }
 

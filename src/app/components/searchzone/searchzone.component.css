@@ -1,43 +1,43 @@
-section {
-  background-size: cover;
-  border-radius: 8px;
+.searchzone {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
+  background-size: cover;
+  border-radius: 8px;
   width: 100%;
   height: 8.75rem;
-  justify-content: center;
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-article {
-  border-radius: 4px;
-  background: #FFF;
+.job-search {
   display: flex;
   align-items: center;
+  background: #FFF;
   width: 100%;
   max-width: 720px;
+  border-radius: 4px;
 }
 
-img {
-  height: 1.25rem;
-  width: 1.25rem;
+.job-search .job-icon {
   color: black;
+  width: 1.25rem;
+  height: 1.25rem;
   margin-left: 1rem;
   margin-right: 0.5rem;
 }
 
-input {
-  color: #282538;
-  border: 0;
+.job-search .search-input {
   display: block;
+  color: #282538;
   font-size: 0.875rem;
   margin-right: 1rem;
-  height: 1.5rem;
   width: 100%;
-  white-space: nowrap;
+  height: 1.5rem;
+  border: none;
   overflow: hidden;
+  white-space: nowrap;
   text-overflow: ellipsis;
 }
 
@@ -46,40 +46,32 @@ input {
   opacity: 1;
 }
 
-:-ms-input-placeholder {
-  color: #B9BDCF;
-}
-
-::-ms-input-placeholder {
-  color: #B9BDCF;
-}
-
-button {
+.job-search .search-btn {
   display: block;
-  background: #1E86FF;
-  border-radius: 4px;
   color: #FFF;
-  cursor: pointer;
+  background: #1E86FF;
   font-weight: 500;
-  margin: 0.25rem;
   padding: 1rem 1.5rem;
-  border: 0;
+  margin: 0.25rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-button:active {
+.job-search .search-btn:active {
   transform: scale(.95);
   transition: all 200ms ease-in-out;
 }
 
 @media screen and (min-width: 600px) {
-  section {
+  .searchzone {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
   }
 }
 
 @media screen and (min-width: 768px) {
-  button {
+  .job-search .search-btn {
     width: 10rem;
   }
 }

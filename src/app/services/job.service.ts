@@ -6,8 +6,9 @@ import { Job } from '../interfaces/job';
   providedIn: 'root'
 })
 export class JobService {
-  corsAnywhere: string = 'https://cors-anywhere.herokuapp.com/';
-  httpHeaders: HttpHeaders = new HttpHeaders({
+
+  private corsAnywhere: string = 'https://cors-anywhere.herokuapp.com/';
+  private httpHeaders: HttpHeaders = new HttpHeaders({
     'Origin': 'X-Requested-With',
   });
 

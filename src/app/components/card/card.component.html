@@ -1,22 +1,26 @@
-<article>
-  <a [routerLink]="'/jobs/' + job.id">
-    <img class="logo" [src]="job.company_logo || 'assets/images/not-found.png'" alt="Logo">
-    <div class="info">
-      <div class="content">
-        <span>{{ job.company }}</span>
-        <h2>{{ job.title }}</h2>
+<article class="card">
+  <a class="card-link" [routerLink]="'/jobs/' + job.id">
+    <img class="card-logo" [src]="job.company_logo || 'assets/images/not-found.png'" alt="Company logo">
+
+    <div class="card-info">
+      <main class="card-content">
+        <span class="company-name">{{ job.company }}</span>
+        <h2 class="job-title">{{ job.title }}</h2>
         <label *ngIf="job.type === 'Full Time'" class="full-time">Full time</label>
-      </div>
-      <div class="metadata">
-        <span>
-          <img src="assets/icons/public.svg" alt="">
+      </main>
+
+      <footer class="card-footer">
+        <span class="job-location">
+          <img src="assets/icons/public.svg" alt="Location">
           <label>{{ job.location }}</label>
         </span>
-        <span>
-          <img src="assets/icons/schedule.svg" alt="">
+
+        <span class="creation-date">
+          <img src="assets/icons/schedule.svg" alt="Created at">
           <label>{{ job.created_at }}</label>
         </span>
-      </div>
+      </footer>
     </div>
+
   </a>
 </article>

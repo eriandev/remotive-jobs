@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JobService } from 'src/app/services/job.service';
-import { Job } from 'src/app/interfaces/job'
+import { Job } from 'src/app/interfaces/job';
 
 @Component({
   selector: 'app-jobslist',
@@ -9,8 +9,8 @@ import { Job } from 'src/app/interfaces/job'
 })
 export class JobslistComponent implements OnInit {
 
-  jobsList: Job[]
-  skeletons = new Array(5);
+  public jobsList: Job[];
+  public skeletons = new Array(5);
 
   constructor( private _jobService: JobService ) { }
 

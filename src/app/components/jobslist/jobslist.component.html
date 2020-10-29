@@ -2,19 +2,23 @@
   <app-card *ngFor="let job of jobsList" [job]="job"></app-card>
 </ng-container>
 
-<ng-template #loading>
 
+
+<ng-template #loading>
   <ng-container *ngFor="let skeleton of skeletons">
-    <article class="card">
+
+    <article class="card-loading">
       <figure class="card-image loading"></figure>
-      <div class="card-detail">
+
+      <main class="card-detail">
         <span class="loading"></span>
         <h2 class="loading"></h2>
-        <div class="card-metadata">
-          <label class="full-time loading"></label>
-        </div>
-      </div>
-    </article>
-  </ng-container>
 
+        <footer class="card-footer">
+          <label class="full-time loading"></label>
+        </footer>
+      </main>
+    </article>
+
+  </ng-container>
 </ng-template>
