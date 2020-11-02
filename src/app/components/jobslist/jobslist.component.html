@@ -1,5 +1,5 @@
-<ng-container *ngIf="jobsList; else loading">
-  <app-card *ngFor="let job of jobsList" [job]="job"></app-card>
+<ng-container *ngIf="splitedJobsList; else loading">
+  <app-card *ngFor="let job of splitedJobsList[currentPage - 1]" [job]="job"></app-card>
 </ng-container>
 
 
@@ -22,3 +22,59 @@
 
   </ng-container>
 </ng-template>
+
+
+
+<div class="pagination">
+  <div class="pagination-content">
+    <button class="page arrow" [disabled]="currentPage === 1" (click)="gotoPreviousPage()">
+      <img src="assets/icons/chevron-left.svg" alt="Previous">
+    </button>
+
+    <ng-container *ngIf="!arrPages.length">
+      <button class="page" [ngClass]="{ 'active': currentPage === 1 }">1</button>
+    </ng-container>
+
+    <ng-container *ngIf="arrPages.length <= 5">
+      <button *ngFor="let numPage of arrPages" class="page" [ngClass]="{ 'active': currentPage === numPage }" (click)="gotoPage(numPage)">{{ numPage }}</button>
+    </ng-container>
+
+    <ng-container *ngIf="arrPages.length > 5">
+      <ng-container *ngIf="currentPage <= 3">
+        <button class="page" [ngClass]="{ 'active': currentPage === 1 }" (click)="gotoPage(1)">1</button>
+        <button class="page" [ngClass]="{ 'active': currentPage === 2 }" (click)="gotoPage(2)">2</button>
+        <button class="page" [ngClass]="{ 'active': currentPage === 3 }" (click)="gotoPage(3)">3</button>
+        <div class="ellipsis">
+          ···
+        </div>
+        <button class="page" [ngClass]="{ 'active': currentPage === arrPages.length }" (click)="gotoPage(arrPages.length)">{{ arrPages.length }}</button>
+      </ng-container>
+
+      <ng-container *ngIf="currentPage > 3 && currentPage < arrPages.length - 2">
+        <button class="page" (click)="gotoPage(1)">1</button>
+        <div class="ellipsis">
+            ···
+        </div>
+        <button class="page active">{{ currentPage }}</button>
+        <div class="ellipsis">
+            ···
+        </div>
+        <button class="page" (click)="gotoPage(arrPages.length)">{{ arrPages.length }}</button>
+      </ng-container>
+
+      <ng-container *ngIf="currentPage >= arrPages.length - 2">
+        <button class="page" [ngClass]="{ 'active': currentPage === 1 }" (click)="gotoPage(1)">1</button>
+        <div class="ellipsis">
+          ···
+        </div>
+        <button class="page" [ngClass]="{ 'active': currentPage === arrPages.length - 2 }" (click)="gotoPage(arrPages.length - 2)">{{ arrPages.length - 2 }}</button>
+        <button class="page" [ngClass]="{ 'active': currentPage === arrPages.length - 1 }" (click)="gotoPage(arrPages.length - 1 )">{{ arrPages.length - 1 }}</button>
+        <button class="page" [ngClass]="{ 'active': currentPage === arrPages.length }" (click)="gotoPage(arrPages.length)">{{ arrPages.length }}</button>
+      </ng-container>
+    </ng-container>
+
+    <button class="page arrow" [disabled]="currentPage === arrPages.length" (click)="gotoNextPage()">
+      <img src="assets/icons/chevron-right.svg" alt="Next">
+    </button>
+  </div>
+</div>

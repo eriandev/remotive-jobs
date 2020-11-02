@@ -9,14 +9,34 @@ import { Job } from 'src/app/interfaces/job';
 })
 export class JobslistComponent implements OnInit {
 
-  public jobsList: Job[];
+  private jobsPerPage = 5;
+  public arrPages = [1];
+  public currentPage = 1;
   public skeletons = new Array(5);
+  public splitedJobsList: Array<Job[]>;
 
-  constructor( private _jobService: JobService ) { }
+  constructor( private jobService: JobService ) { }
 
   ngOnInit(): void {
-    this._jobService.getAllJobs()
-      .subscribe( (data: Job[]) => this.jobsList = data );
+    this.jobService.getAllJobs()
+      .subscribe( (data: Job[]) => {
+        this.setNumberOfPages( data );
+        this.splitJobsListInPages( data );
+      });
   }
 
+  private splitJobsListInPages( list: Job[] ) {
+    this.splitedJobsList = [];
+    while (list.length)
+      this.splitedJobsList.push(list.splice(0, this.jobsPerPage));
+  }
+
+  private setNumberOfPages( list: Job[] ) {
+    const numPages = Math.ceil(list.length / this.jobsPerPage);
+    this.arrPages = Array.from({ length: numPages }, (_, i) => i + 1);
+  }
+
+  public gotoPage( pageToGo: number ) { this.currentPage = pageToGo }
+  public gotoPreviousPage() { this.currentPage > 1 ? this.currentPage-- : null }
+  public gotoNextPage() { this.currentPage < this.arrPages.length ? this.currentPage++ : null }
 }
