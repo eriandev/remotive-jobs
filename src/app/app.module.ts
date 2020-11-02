@@ -12,6 +12,7 @@ import { JobslistComponent } from './components/jobslist/jobslist.component';
 import { CardComponent } from './components/card/card.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { RelativeDatePipe } from './pipes/relative-date.pipe';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     SearchzoneComponent,
     FilterzoneComponent,
     JobslistComponent,
-    CardComponent
+    CardComponent,
+    RelativeDatePipe
   ],
   imports: [
     BrowserModule,
