@@ -15,12 +15,12 @@ export class JobsComponent implements OnInit {
   public infoLoading = new Array(10);
   public applyLoading = new Array(3);
 
-  constructor( private _activatedRoute: ActivatedRoute, private _jobService: JobService ) { }
+  constructor( private activatedRoute: ActivatedRoute, private jobService: JobService ) { }
 
   ngOnInit(): void {
-    this.jobID = this._activatedRoute.snapshot.paramMap.get('id');
+    this.jobID = this.activatedRoute.snapshot.paramMap.get('id');
 
-    this._jobService.getJobByID(this.jobID)
+    this.jobService.getJobByID(this.jobID)
       .subscribe( (data: Job) => this.jobInfo = data );
   }
 
