@@ -11,7 +11,7 @@ export class JobslistComponent implements OnInit {
 
   private jobsPerPage = 5;
   public arrPages = [1];
-  public currentPage = 1;
+  public currentPage = 6;
   public skeletons = new Array(5);
   public splitedJobsList: Array<Job[]>;
 

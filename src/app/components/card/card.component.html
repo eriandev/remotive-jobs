@@ -6,20 +6,23 @@
       <main class="card-content">
         <span class="company-name">{{ job.company }}</span>
         <h2 class="job-title">{{ job.title }}</h2>
-        <label *ngIf="job.type === 'Full Time'" class="full-time">Full time</label>
+
+        <div class="extra-info">
+          <label *ngIf="job.type === 'Full Time'" class="full-time">Full time</label>
+
+          <div class="card-metadata">
+            <span class="job-location">
+              <img src="assets/icons/public.svg" alt="Location">
+              <label>{{ job.location }}</label>
+            </span>
+            <span class="job-creation-date">
+              <img src="assets/icons/schedule.svg" alt="Created at">
+              <label>{{ job.created_at }}</label>
+            </span>
+          </div>
+
+        </div>
       </main>
-
-      <footer class="card-footer">
-        <span class="job-location">
-          <img src="assets/icons/public.svg" alt="Location">
-          <label>{{ job.location }}</label>
-        </span>
-
-        <span class="creation-date">
-          <img src="assets/icons/schedule.svg" alt="Created at">
-          <label>{{ job.created_at }}</label>
-        </span>
-      </footer>
     </div>
 
   </a>
