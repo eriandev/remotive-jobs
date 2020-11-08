@@ -25,18 +25,27 @@ export class JobslistComponent implements OnInit {
       });
   }
 
-  private splitJobsListInPages( list: Job[] ) {
+  private splitJobsListInPages( list: Job[] ): void {
     this.splitedJobsList = [];
-    while (list.length)
+    while (list.length) {
       this.splitedJobsList.push(list.splice(0, this.jobsPerPage));
+    }
   }
 
-  private setNumberOfPages( list: Job[] ) {
+  private setNumberOfPages( list: Job[] ): void {
     const numPages = Math.ceil(list.length / this.jobsPerPage);
     this.arrPages = Array.from({ length: numPages }, (_, i) => i + 1);
   }
 
-  public gotoPage( pageToGo: number ) { this.currentPage = pageToGo }
-  public gotoPreviousPage() { this.currentPage > 1 ? this.currentPage-- : null }
-  public gotoNextPage() { this.currentPage < this.arrPages.length ? this.currentPage++ : null }
+  public gotoPage( pageToGo: number ): void {
+    this.currentPage = pageToGo;
+  }
+
+  public gotoPreviousPage(): void {
+    this.currentPage > 1 ? this.currentPage-- : null;
+  }
+
+  public gotoNextPage(): void {
+    this.currentPage < this.arrPages.length ? this.currentPage++ : null;
+  }
 }
