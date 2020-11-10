@@ -1,7 +1,7 @@
-<app-searchzone></app-searchzone>
+<app-searchzone (textToFind)="textToFind = $event"></app-searchzone>
 <section>
   <app-filterzone></app-filterzone>
   <main>
-    <app-jobslist></app-jobslist>
+    <app-jobslist [textToFind]="textToFind"></app-jobslist>
   </main>
 </section>

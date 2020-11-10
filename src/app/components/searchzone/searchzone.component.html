@@ -2,8 +2,8 @@
 
   <article class="job-search">
     <img class="job-icon" src="assets/icons/work_outline.svg" alt="Search job">
-    <input class="search-input" type="text" aria-label="Title, companies, expertise or benefits" placeholder="Title, companies, expertise or benefits">
-    <button class="search-btn">Search</button>
+    <input (keydown.enter)="emitTextToFind()" (input)="inputText = $event.target.value" class="search-input" type="text" aria-label="Title, companies, expertise or benefits" placeholder="Title, companies, expertise or benefits">
+    <button (click)="emitTextToFind()" class="search-btn">Search</button>
   </article>
 
 </section>

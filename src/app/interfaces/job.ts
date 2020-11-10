@@ -7,7 +7,7 @@ export interface Job {
   company_url: string;
   location: string;
   title: string;
-  description: Text;
-  how_to_apply: Text;
+  description: string;
+  how_to_apply: string;
   company_logo: string;
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-searchzone',
@@ -7,8 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchzoneComponent implements OnInit {
 
+  @Output() textToFind = new EventEmitter<string>();
+  public inputText = '';
+
   constructor() { }
 
   ngOnInit(): void { }
+
+  public emitTextToFind(): void {
+    this.textToFind.emit(this.inputText.trim());
+  }
 
 }
