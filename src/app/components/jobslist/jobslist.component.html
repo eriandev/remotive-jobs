@@ -1,5 +1,11 @@
 <ng-container *ngIf="splitedJobsList; else loading">
   <app-card *ngFor="let job of splitedJobsList[currentPage - 1]" [job]="job"></app-card>
+
+  <ng-container *ngIf="splitedJobsList.length === 0">
+    <div class="no-results">
+      No results found
+    </div>
+  </ng-container>
 </ng-container>
 
 
