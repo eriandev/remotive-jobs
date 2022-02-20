@@ -103,3 +103,8 @@ img {
   max-width: 100%;
   border-style: none;
 }
+
+.container {
+  max-width: 1200px;
+  padding: 0 var(--size-xs);
+}

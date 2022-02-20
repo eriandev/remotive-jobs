@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  public readonly title = 'remotive-jobs';
+  public readonly title = 'Remotive';
 }
