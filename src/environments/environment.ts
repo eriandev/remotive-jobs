@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  API_JOBS_LIST: 'https://erianvc.github.io/api/remotive',
 };
 
 /*

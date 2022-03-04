@@ -1,1 +1,1 @@
-export * from './data.interface';
+export * from './api.interface';
