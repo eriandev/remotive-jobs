@@ -106,5 +106,8 @@
 
   .job-creation-date {
     display: block;
+    font-weight: 300;
+    font-size: var(--size-sm);
+    font-family: var(--font-poppins);
   }
 }
