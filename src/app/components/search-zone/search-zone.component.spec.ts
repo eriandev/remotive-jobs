@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SearchZoneComponent } from './search-zone.component';
+import { JobCardComponent } from '@components/job-card/job-card.component';
+import { JobCardsComponent } from '@components/job-cards/job-cards.component';
 
 describe('SearchZoneComponent', () => {
   let component: SearchZoneComponent;
@@ -8,7 +10,8 @@ describe('SearchZoneComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [SearchZoneComponent],
+      declarations: [SearchZoneComponent, JobCardComponent, JobCardsComponent],
+      imports: [],
     }).compileComponents();
   });
 

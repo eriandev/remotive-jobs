@@ -8,5 +8,5 @@ import type { Job } from '@core/interfaces';
   styleUrls: ['./job-card.component.css'],
 })
 export class JobCardComponent {
-  @Input() job!: Job;
+  @Input() job?: Job;
 }

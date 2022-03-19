@@ -1,4 +1,4 @@
-<article class="job">
+<article *ngIf="job" class="job">
   <a class="job-link" target="_blank" rel="noopener noreferrer" [href]="job.url">
     <div class="job-content">
       <img class="job-company-logo" [src]="job.company_logo || 'assets/images/not-found.png'" [alt]="job.company_name" />
