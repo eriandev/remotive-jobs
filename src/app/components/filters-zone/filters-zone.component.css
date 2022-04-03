@@ -1,0 +1,71 @@
+.filters-zone {
+  position: sticky;
+  top: var(--size-base);
+  border-radius: var(--size-base);
+  border: 1px solid var(--color-gray);
+  padding: var(--size-base) var(--size-xs);
+}
+
+.filters-zone .title {
+  display: block;
+  font-weight: 700;
+  margin-bottom: var(--size-xs);
+}
+
+.filters-zone .filters {
+  display: grid;
+  gap: var(--size-2xs);
+  margin-bottom: var(--size-base);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.filters .filter {
+  display: grid;
+  cursor: pointer;
+  width: max-content;
+  align-items: center;
+  gap: var(--size-2xs);
+  grid-template-columns: repeat(2, fit-content(100%));
+}
+
+.filter input {
+  margin: 0;
+  cursor: pointer;
+  appearance: none;
+  position: relative;
+  width: var(--size-base);
+  height: var(--size-base);
+  border-radius: var(--rounded-full);
+  border: 1px solid var(--color-gray);
+}
+
+.filter input:checked::after {
+  content: '';
+  top: 2px;
+  left: 2px;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  background: var(--color-primary);
+  border-radius: var(--rounded-full);
+}
+
+.filter .filter-label {
+  gap: 0.25rem;
+  display: grid;
+  grid-template-columns: repeat(2, fit-content(100%));
+}
+
+.filter-label img {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.filter-label .icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.filter-label span {
+  font-weight: 300;
+}
