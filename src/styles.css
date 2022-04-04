@@ -57,9 +57,9 @@ body {
   margin: 0;
   min-height: 100vh;
   line-height: inherit;
+  background-color: #fff;
   font-size: var(--size-base);
   color: var(--color-chocolate);
-  background: var(--color-tertiary);
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -82,9 +82,16 @@ p {
 
 button,
 [type='button'] {
-  background-color: transparent;
-  background-image: none;
   cursor: pointer;
+  background-image: none;
+  background-color: transparent;
+}
+
+input,
+button {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
 }
 
 ol,

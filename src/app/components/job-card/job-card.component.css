@@ -1,8 +1,11 @@
 .job {
   width: 100%;
+  display: grid;
+  min-height: 70px;
+  align-content: center;
   border-radius: var(--size-base);
   background: var(--color-secondary);
-  border: 1px solid rgba(237, 242, 247, 1);
+  border: 1px solid rgb(237, 242, 247);
   padding: var(--size-2xs) var(--size-base);
 }
 

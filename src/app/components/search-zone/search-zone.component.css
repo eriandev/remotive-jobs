@@ -7,7 +7,6 @@
   background-size: cover;
   justify-content: center;
   padding: 0 var(--size-base);
-  margin-top: var(--size-3xl);
   border-radius: var(--size-2xs);
   background: url('/assets/images/bg-search-zone.png') no-repeat center center;
 }

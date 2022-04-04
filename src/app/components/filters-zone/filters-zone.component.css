@@ -1,8 +1,8 @@
 .filters-zone {
+  top: 110px;
   position: sticky;
-  top: var(--size-base);
   border-radius: var(--size-base);
-  border: 1px solid var(--color-gray);
+  border: 1px solid rgb(237, 242, 247);
   padding: var(--size-base) var(--size-xs);
 }
 
@@ -29,7 +29,6 @@
 }
 
 .filter input {
-  margin: 0;
   cursor: pointer;
   appearance: none;
   position: relative;
