@@ -1,37 +1,29 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { HomeComponent } from './pages/home/home.component';
-import { JobsComponent } from './pages/jobs/jobs.component';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { SearchzoneComponent } from './components/searchzone/searchzone.component';
-import { FilterzoneComponent } from './components/filterzone/filterzone.component';
-import { JobslistComponent } from './components/jobslist/jobslist.component';
-import { CardComponent } from './components/card/card.component';
-
-import { HttpClientModule } from '@angular/common/http';
+import { CoreModule } from './core/core.module';
 import { RelativeDatePipe } from './pipes/relative-date.pipe';
-
+import { LocationIconPipe } from './pipes/location-icon.pipe';
+import { JobCardComponent } from './components/job-card/job-card.component';
+import { JobCardsComponent } from './components/job-cards/job-cards.component';
+import { SearchZoneComponent } from './components/search-zone/search-zone.component';
+import { FiltersZoneComponent } from './components/filters-zone/filters-zone.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    JobsComponent,
-    SearchzoneComponent,
-    FilterzoneComponent,
-    JobslistComponent,
-    CardComponent,
-    RelativeDatePipe
+    SearchZoneComponent,
+    JobCardComponent,
+    RelativeDatePipe,
+    LocationIconPipe,
+    JobCardsComponent,
+    FiltersZoneComponent,
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, HttpClientModule, FormsModule, RouterModule, CoreModule],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

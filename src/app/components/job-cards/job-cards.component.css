@@ -1,0 +1,6 @@
+.jobs {
+  display: grid;
+  grid-auto-flow: row;
+  gap: var(--size-2xs);
+  grid-auto-rows: min-content;
+}

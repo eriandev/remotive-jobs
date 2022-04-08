@@ -1,39 +1,34 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { TimeInterval } from 'src/app/interfaces/timeInterval';
 
-@Pipe({
-  name: 'relativeDate'
-})
+@Pipe({ name: 'relativeDate' })
 export class RelativeDatePipe implements PipeTransform {
+  private readonly DATE_UNITS = {
+    day: 86400,
+    hour: 3600,
+    minute: 60,
+    second: 1,
+  };
 
-  transform(value: Date, ...args: unknown[]): string | Date {
-    let counter: number;
-    const timeIntervals: TimeInterval = {
-      year: 31536000,
-      month: 2592000,
-      week: 604800,
-      day: 86400,
-      hour: 3600,
-      minute: 60,
-      second: 1
-    };
+  transform(stringDate: string, locales: string | string[] = 'en'): string {
+    const date = new Date(stringDate);
+    const rtf = new Intl.RelativeTimeFormat(locales);
+    const secondsElapsed = this.getSecondsDiff(date.getTime());
+    const { value, unit } = this.getUnitAndValueDate(secondsElapsed);
 
-    if (value) {
-      const differenceInSeconds = Math.floor((+new Date() - +new Date(value)) / 1000);
-      if (differenceInSeconds < 30) { return 'Just now'; }
+    return rtf.format(value, unit);
+  }
 
-      for (const i in timeIntervals) {
-        if (counter > 0) {
-          if (counter === 1) {
-            return `${counter} ${i} ago`;
-          }
-          else {
-            return `${counter} ${i}s ago`;
-          }
-        }
-        counter = Math.floor(differenceInSeconds / timeIntervals[i]);
+  private getSecondsDiff(timestamp: number) {
+    return (Date.now() - timestamp) / 1000;
+  }
+
+  private getUnitAndValueDate(secondsElapsed: number) {
+    for (const [unit, secondsInUnit] of Object.entries(this.DATE_UNITS)) {
+      if (secondsElapsed >= secondsInUnit || unit === 'second') {
+        const value = Math.floor(secondsElapsed / secondsInUnit) * -1;
+        return { value, unit: unit as Intl.RelativeTimeFormatUnit };
       }
     }
-    return value;
+    return { value: 0, unit: 'second' as Intl.RelativeTimeFormatUnit };
   }
 }

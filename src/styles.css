@@ -1,88 +1,126 @@
+/* You can add global styles to this file, and also import other style files */
+
 *,
-::before,
-::after {
+:after,
+:before {
   box-sizing: border-box;
-  border-width: 0;
+  border: 0 solid var(--color-gray);
 }
 
 :root {
   font-size: 16px;
+
+  /* Colors */
+  --color-primary: #ff871a;
+  --color-secondary: #fed294;
+  --color-tertiary: #fff6e9;
+  --color-chocolate: #532a21;
+  --color-brown: #b58c83;
+  --color-gray: #b9bdcf;
+
+  /* Sizes */
+  --size-2xs: 0.5rem; /* 8px */
+  --size-xs: 0.75rem; /* 12px */
+  --size-sm: 0.875rem; /* 14px */
+  --size-base: 1rem; /* 16px */
+  --size-lg: 1.125rem; /* 18px */
+  --size-xl: 1.5rem; /* 24px */
+  --size-2xl: 1.75rem; /* 28px */
+  --size-3xl: 2rem; /* 32px */
+  --size-4xl: 2.5rem; /* 40px */
+  --size-5xl: 3rem; /* 48px */
+
+  /* Fonts */
+  --font-roboto: 'Roboto', ui-sans-serif, -apple-system, sans-serif;
+  --font-poppins: 'Poppins', system-ui, Helvetica, Arial, monospace;
+  --font-montserrat: 'Montserrat', Helvetica, Arial, monospace;
+
+  /* Borders */
+  --rounded: 4px;
+  --rounded-full: 999px;
+
+  /* Shadows */
+  --shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 html {
-  line-height: 1.15;
+  line-height: 1.2;
   -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: transparent;
+  font-family: var(--font-roboto);
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
 }
 
 body {
-  background: #F6F7FB;
-  color: #334680;
-  font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  margin: 0;
   min-height: 100vh;
-  margin: 0;
+  line-height: inherit;
+  background-color: #fff;
+  font-size: var(--size-base);
+  color: var(--color-chocolate);
+  -webkit-tap-highlight-color: transparent;
 }
 
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
+b,
+strong {
+  font-weight: bolder;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-  background-color: transparent;
-}
-
-img {
-  border-style: none;
-}
-
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: inherit;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
-button,
-input {
-  overflow: visible;
-}
-
-button,
-select {
-  text-transform: none;
-}
-
+h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-hr,
-figure,
-p,
-pre {
+p {
   margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
-button {
-  background-color: transparent;
+button,
+[type='button'] {
+  cursor: pointer;
   background-image: none;
-  -webkit-tap-highlight-color: transparent;
-  user-select: none;
+  background-color: transparent;
+}
+
+input,
+button {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
 }
 
 ol,
 ul {
-  list-style: none;
   margin: 0;
   padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  border-style: none;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 var(--size-xs);
+}
+
+@media screen and (min-width: 1224px) {
+  .container {
+    padding: 0;
+  }
 }

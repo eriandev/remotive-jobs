@@ -1,0 +1,26 @@
+<article class="filters-zone">
+  <span class="title">Remote Location</span>
+  <div class="filters">
+    <label class="filter">
+      <input type="radio" value="Worldwide" [(ngModel)]="currentFilter" />
+      <div class="filter-label">
+        <img src="assets/icons/worldwide-symbol.png" alt="" />
+        <span>Worldwide</span>
+      </div>
+    </label>
+    <label class="filter">
+      <input type="radio" value="USA Only" [(ngModel)]="currentFilter" />
+      <div class="filter-label">
+        <span class="icon">🇺🇸</span>
+        <span>USA Only</span>
+      </div>
+    </label>
+    <label class="filter">
+      <input type="radio" value="Other Locations" [(ngModel)]="currentFilter" />
+      <div class="filter-label">
+        <img src="assets/icons/remote-symbol.png" alt="" />
+        <span>Other Locations</span>
+      </div>
+    </label>
+  </div>
+</article>
