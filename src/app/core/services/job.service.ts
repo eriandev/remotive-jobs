@@ -10,7 +10,7 @@ export class JobService {
   constructor(private readonly http: HttpClient) {}
 
   public getJobsByPage(page = 1): Promise<JobResponse> {
-    return firstValueFrom(this.http.get<JobResponse>(`${environment.API_JOBS_LIST}/${page}`));
+    return firstValueFrom(this.http.get<JobResponse>(`${environment.API_JOBS_LIST}/${page}/`));
   }
 
   public getJobSections(section: JobSections): Promise<JobSectionResponse> {
@@ -18,6 +18,6 @@ export class JobService {
   }
 
   public async getJobsBySection(section: JobSections, page = 1): Promise<JobResponse> {
-    return firstValueFrom(this.http.get<JobResponse>(`${environment.API_JOBS_LIST}/${section}/${page}`));
+    return firstValueFrom(this.http.get<JobResponse>(`${environment.API_JOBS_LIST}/${section}/${page}/`));
   }
 }
