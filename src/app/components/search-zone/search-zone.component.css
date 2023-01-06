@@ -8,7 +8,6 @@
   justify-content: center;
   padding: 0 var(--size-base);
   border-radius: var(--size-2xs);
-  background: url('/assets/images/bg-search-zone.png') no-repeat center center;
 }
 
 .job-search {
