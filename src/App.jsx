@@ -1,8 +1,7 @@
 import Title from './components/Title'
 import Header from './components/Header'
 
-export default function App () {
-  const title = 'Remotive'
+export default function App ({ title }) {
   return (
     <Header>
       <Title>
