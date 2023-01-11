@@ -1,3 +1,30 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+
+# profiling files
+chrome-profiler-events*.json
+speed-measure-plugin*.json
+
+# IDEs and editors
+.c9/
+.idea/
+.project
+*.launch
+.settings/
+.classpath
+*.sublime-workspace
+
+### vscode ###
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/css_custom_data.json
+*.code-workspace
+
 # Logs
 logs
 *.log
@@ -7,18 +34,27 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# misc
+.env
+.env.*
+!.env.example
+/coverage
+/dist
+/dist-ssr
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+### macOS ###
+# General
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+.AppleDouble
+.LSOverride
+
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# End of https://www.toptal.com/developers/gitignore/api/
