@@ -1,9 +1,10 @@
-/** @type {import('react').FC} */
+import Title from './components/Title'
+
 export default function App () {
   const title = 'Remotive'
   return (
-    <h1 class='w-max py-4 text-2xl lg:p-8'>
+    <Title>
       <strong>{title}</strong> Jobs
-    </h1>
+    </Title>
   )
 }
