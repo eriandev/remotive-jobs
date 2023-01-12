@@ -14,7 +14,10 @@ module.exports = {
       tertiary: '#fff6e9',
       chocolate: '#532a21',
       brown: '#b58c83',
-      gray: '#b9bdcf'
+      gray: '#b9bdcf',
+
+      white: '#fff',
+      transparent: 'transparent'
     }
   },
   plugins: []
