@@ -1,6 +1,6 @@
 import Title from './components/Title'
 import Header from './components/Header'
-import Button from './components/Button'
+import SearchZone from './components/SearchZone'
 
 export default function App ({ title }) {
   return (
@@ -8,7 +8,7 @@ export default function App ({ title }) {
       <Title>
         <strong>{title}</strong> Jobs
       </Title>
-      <Button>Search</Button>
+      <SearchZone />
     </Header>
   )
 }
