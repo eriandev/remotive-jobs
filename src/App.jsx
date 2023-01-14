@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Container from './components/Container'
 import SearchZone from './components/SearchZone'
 import FilterZone from './components/FilterZone'
+import JobCardList from './components/JobCardList'
 
 export default function App ({ title }) {
   return (
@@ -13,8 +14,9 @@ export default function App ({ title }) {
         </Title>
         <SearchZone />
       </Header>
-      <Container cssClass='pt-7'>
+      <Container cssClass='pt-7 lg:grid lg:grid-cols-[1fr_2fr] lg:gap-4'>
         <FilterZone />
+        <JobCardList />
       </Container>
     </>
   )
