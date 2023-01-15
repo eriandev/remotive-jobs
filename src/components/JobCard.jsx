@@ -6,7 +6,7 @@ export default function JobCard ({ job }) {
   return (
     <article className='group grid min-h-[70px] w-full items-center rounded-2xl border border-[rgb(237,242,247)] bg-secondary hover:bg-[#fed294c9]'>
       <a target='_blank' rel='noopener noreferrer' href={job.url} className='grid w-full grid-cols-[auto_fit-content(100%)] items-center gap-2 py-2 px-4'>
-        <div className='grid grid-cols-[fit-content(100%)_auto] items-center gap-2'>
+        <div className='grid grid-cols-[minmax(0,32px)_auto] items-center gap-2'>
           <img alt={job.companyName} src={job?.companyLogo || '/not-found.png'} className='max-h-[2rem] max-w-[2rem] rounded-full object-contain' />
           <JobCardInfo
             title={job.title}
@@ -37,7 +37,7 @@ function JobCardInfo ({ title, companyName, location, locationIcon, salary }) {
 function JobCardLocation ({ location, locationIcon }) {
   return (
     <div title={`Location: ${location}`} className='grid grid-cols-[fit-content(100%)_auto] items-center gap-1 rounded-full bg-[rgba(0,0,0,0.06)] py-1 px-2 text-[10px] font-light sm:text-xs'>
-      <img alt={location} className='h-[14px] w-[14px] sm:h-[18px] sm:w-[18px]' src={locationIcon} />
+      <img alt={location} src={locationIcon} className='h-[14px] w-[14px] sm:h-[18px] sm:w-[18px]' />
       <span className='grid grid-cols-[fit-content(100%)_auto] rounded-full uppercase'>{location}</span>
     </div>
   )
