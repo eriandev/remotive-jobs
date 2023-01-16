@@ -14,7 +14,7 @@ export default function App ({ title }) {
         </Title>
         <SearchZone />
       </Header>
-      <Container className='pt-7 lg:grid lg:grid-cols-[1fr_2fr] lg:gap-4'>
+      <Container className='flex flex-col gap-7 pt-7 lg:grid lg:grid-cols-[1fr_2fr] lg:gap-4'>
         <FilterZone />
         <JobCardList />
       </Container>
