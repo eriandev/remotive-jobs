@@ -9,6 +9,7 @@ on:
 
 env:
   VITE_API_URL: ${{ vars.VITE_API_URL }}
+  VITE_BASE_URL: ${{ vars.VITE_BASE_URL }}
 
 jobs:
   lint:
@@ -46,7 +47,6 @@ jobs:
           npm run build
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          BRANCH: gh-pages
-          FOLDER: dist
+          folder: dist
