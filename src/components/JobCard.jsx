@@ -8,7 +8,7 @@ export default function JobCard ({ job }) {
     <article className='group grid min-h-[70px] w-full items-center rounded-2xl border border-[rgb(237,242,247)] bg-secondary hover:bg-[#fed294c9]'>
       <a target='_blank' rel='noopener noreferrer' href={job.url} className='grid w-full grid-cols-[auto_fit-content(100%)] items-center gap-2 py-2 px-4'>
         <div className='grid grid-cols-[minmax(0,32px)_auto] items-center gap-2'>
-          <Image alt={job.companyName} src={job?.companyLogo} className='max-h-[2rem] max-w-[2rem] rounded-full object-contain' />
+          <Image alt={job.companyName} src={job?.companyLogo} height={32} width={32} className='rounded-full object-contain' />
           <JobCardInfo
             title={job.title}
             salary={job?.salary}
@@ -37,8 +37,8 @@ function JobCardInfo ({ title, companyName, location, locationIcon, salary }) {
 
 function JobCardLocation ({ location, locationIcon }) {
   return (
-    <div title={`Location: ${location}`} className='grid grid-cols-[fit-content(100%)_auto] items-center gap-1 rounded-full bg-[rgba(0,0,0,0.06)] py-1 px-2 text-[10px] font-light sm:text-xs'>
-      <Image alt={location} name={locationIcon} className='h-[14px] w-[14px] sm:h-[18px] sm:w-[18px]' />
+    <div title={`Location: ${location}`} className='grid grid-cols-[fit-content(100%)_auto] items-center gap-1 rounded-full bg-[rgba(0,0,0,0.06)] py-1 px-2 text-xs font-light'>
+      <Image alt={location} name={locationIcon} height={18} width={18} />
       <span className='grid grid-cols-[fit-content(100%)_auto] rounded-full uppercase'>{location}</span>
     </div>
   )
@@ -46,7 +46,7 @@ function JobCardLocation ({ location, locationIcon }) {
 
 function JobCardSalary ({ salary }) {
   return (
-    <div title={`Salary: ${salary}`} className='text-secondary grid grid-cols-[fit-content(100%)_auto] items-center gap-1 rounded-full bg-chocolate py-1 px-2 text-[10px] font-semibold sm:text-xs'>
+    <div title={`Salary: ${salary}`} className='text-secondary grid grid-cols-[fit-content(100%)_auto] items-center gap-1 rounded-full bg-chocolate py-1 px-2 text-xs font-semibold'>
       <span className='grid grid-cols-[fit-content(100%)_auto] rounded-full uppercase'>💸 {salary}</span>
     </div>
   )
