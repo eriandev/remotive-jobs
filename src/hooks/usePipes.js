@@ -12,11 +12,11 @@ export default function usePipes () {
   const getLocationIcon = (requiredLocation) => {
     switch (requiredLocation) {
       case 'Worldwide':
-        return '/worldwide-symbol.png'
+        return 'worldwide-symbol.png'
       case 'Anywhere':
-        return '/worldwide-symbol.png'
+        return 'worldwide-symbol.png'
       default:
-        return '/remote-symbol.png'
+        return 'remote-symbol.png'
     }
   }
 

@@ -1,4 +1,5 @@
 import Button from './Button'
+import Image from './Image'
 import useJobs from '../hooks/useJobs'
 
 export default function MoreJobs ({ jobSetState }) {
@@ -14,7 +15,7 @@ export default function MoreJobs ({ jobSetState }) {
 function Loading () {
   return (
     <>
-      <img src='doge.png' alt='Doge' className='w-16' />
+      <Image alt='Doge' name='doge.png' className='w-16' />
       <span className='font-poppins'>Loading more jobs...</span>
     </>
   )

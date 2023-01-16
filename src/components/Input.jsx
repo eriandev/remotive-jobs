@@ -1,3 +1,5 @@
+import Image from './Image'
+
 function Input (props) {
   return <input {...props} />
 }
@@ -16,7 +18,7 @@ function Radio ({ imgSrc, text, label, name, value, onChange }) {
         onChange={handleChange}
       />
       <div className='grid grid-cols-[repeat(2,fit-content(100%))] gap-1 leading-5'>
-        {imgSrc ? <img src={imgSrc} alt={label} className='h-5 w-5' /> : <span className='h-5 w-5'>{text}</span>}
+        {imgSrc ? <Image alt={label} name={imgSrc} className='h-5 w-5' /> : <span className='h-5 w-5'>{text}</span>}
         <span className='font-light'>{label}</span>
       </div>
     </label>
