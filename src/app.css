@@ -22,11 +22,11 @@
     @apply w-max rounded px-6 py-3 font-medium transition-[color,background-color] duration-250 ease-in-out select-none md:w-32;
 
     &.outline {
-      @apply border-primary text-primary border bg-transparent;
+      @apply border border-primary bg-transparent text-primary;
     }
 
     &.fill {
-      @apply bg-primary hover:bg-chocolate hover:text-primary border-none text-white;
+      @apply border-none bg-primary text-white hover:bg-chocolate hover:text-primary;
     }
   }
 }

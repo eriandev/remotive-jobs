@@ -5,7 +5,7 @@ export default function JobCard({ job }) {
   const { getLocationIcon, getRelativeDate } = usePipes()
 
   return (
-    <article className="group bg-secondary grid min-h-17.5 w-full items-center rounded-2xl border border-[rgb(237,242,247)] hover:bg-[#fed294c9]">
+    <article className="group grid min-h-17.5 w-full items-center rounded-2xl border border-[rgb(237,242,247)] bg-secondary hover:bg-[#fed294c9]">
       <a
         target="_blank"
         rel="noopener noreferrer"
@@ -64,7 +64,7 @@ function JobCardSalary({ salary }) {
   return (
     <div
       title={`Salary: ${salary}`}
-      className="text-secondary bg-chocolate grid grid-cols-[fit-content(100%)_auto] items-center gap-1 rounded-full px-2 py-1 text-xs font-semibold"
+      className="grid grid-cols-[fit-content(100%)_auto] items-center gap-1 rounded-full bg-chocolate px-2 py-1 text-xs font-semibold text-secondary"
     >
       <span className="grid grid-cols-[fit-content(100%)_auto] rounded-full uppercase">💸 {salary}</span>
     </div>
@@ -73,7 +73,7 @@ function JobCardSalary({ salary }) {
 
 function JobCardCreationDate({ publicationDate }) {
   return (
-    <div className="sm:font-poppins hidden sm:block sm:text-sm sm:font-light">
+    <div className="hidden sm:block sm:font-poppins sm:text-sm sm:font-light">
       <span>{publicationDate}</span>
     </div>
   )
