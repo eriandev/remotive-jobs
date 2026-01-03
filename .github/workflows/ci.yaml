@@ -2,49 +2,67 @@ name: Continuous deployment
 
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-    types: [opened, synchronize]
+    branches:
+      - main
+
+permissions:
+  contents: write
 
 env:
-  VITE_API_URL: ${{ vars.VITE_API_URL }}
-  VITE_BASE_URL: ${{ vars.VITE_BASE_URL }}
+  PUBLIC_API_URL: ${{ vars.PUBLIC_API_URL }}
+  PUBLIC_BASE_URL: ${{ vars.PUBLIC_BASE_URL }}
 
 jobs:
   lint:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
-        with:
-          persist-credentials: false
 
-      - name: Install dependencies 🧱
-        run: npm ci
+      - name: Use pnpm 🗜️
+        uses: pnpm/action-setup@v2
+        with:
+          version: 10.27.0
+          run_install: false
+
+      - name: Use Node.js 🐢
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22.20.0
+          cache: 'pnpm'
+
+      - name: Install dependencies ⚙️
+        run: pnpm install --frozen-lockfile
 
       - name: Lint 👕
-        run: npm run lint
+        run: pnpm lint
 
   deploy:
     needs: [lint]
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
-        with:
-          persist-credentials: false
 
-      - name: Setup Node 📝
-        uses: actions/setup-node@v2
+      - name: Use pnpm 🗜️
+        uses: pnpm/action-setup@v2
         with:
-          cache: 'npm'
-          node-version: '16'
+          version: 10.27.0
+          run_install: false
+
+      - name: Use Node.js 🐢
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22.20.0
+          cache: 'pnpm'
 
       - name: Install and Build 🔧
         run: |
-          npm ci
-          npm run build
+          pnpm install --frozen-lockfile
+          pnpm build
+
+      - name: Disable Jekyll ⛔
+        run: touch dist/.nojekyll
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
