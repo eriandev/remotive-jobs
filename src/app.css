@@ -1,0 +1,32 @@
+@import 'tailwindcss';
+
+@theme {
+  --breakpoint-sm: 36rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+
+  --font-poppins: 'Poppins', sans-serif;
+  --font-montserrat: 'montserrat', monospace;
+
+  --color-primary: #ff871a;
+  --color-secondary: #fed294;
+  --color-tertiary: #fff6e9;
+  --color-chocolate: #532a21;
+  --color-brown: #b58c83;
+  --color-gray: #b9bdcf;
+}
+
+@layer components {
+  .btn {
+    @apply w-max rounded px-6 py-3 font-medium transition-[color,background-color] duration-250 ease-in-out select-none md:w-32;
+
+    &.outline {
+      @apply border-primary text-primary border bg-transparent;
+    }
+
+    &.fill {
+      @apply bg-primary hover:bg-chocolate hover:text-primary border-none text-white;
+    }
+  }
+}

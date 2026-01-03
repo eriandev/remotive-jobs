@@ -1,0 +1,21 @@
+---
+import Layout from '@/app.astro'
+import Header from '@/components/header.astro'
+import JobCardList from '@/components/JobCardList'
+import Container from '@/components/container.astro'
+import SearchZone from '@/components/search-zone.astro'
+import FilterZone from '@/components/filter-zone.astro'
+---
+
+<Layout>
+  <Header>
+    <SearchZone />
+  </Header>
+
+  <Container class="flex flex-col gap-7 pt-7 lg:grid lg:grid-cols-[1fr_2fr] lg:gap-4">
+    <FilterZone />
+    <Container unlimited as="section" class="grid grid-flow-row gap-2 pb-12">
+      <JobCardList client:load />
+    </Container>
+  </Container>
+</Layout>

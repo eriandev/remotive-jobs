@@ -1,14 +1,14 @@
-export default function usePipes () {
+export default function usePipes() {
   const DATE_UNITS = {
     day: 86400,
     hour: 3600,
     minute: 60,
-    second: 1
+    second: 1,
   }
 
   /**
    * @param {string} requiredLocation
-  */
+   */
   const getLocationIcon = (requiredLocation) => {
     switch (requiredLocation) {
       case 'Worldwide':
@@ -23,7 +23,7 @@ export default function usePipes () {
   /**
    * @param {string} stringDate
    * @param {string|string[]} locales
-  */
+   */
   const getRelativeDate = (stringDate, locales = 'en') => {
     const date = new Date(stringDate)
     const rtf = new Intl.RelativeTimeFormat(locales)
@@ -35,12 +35,12 @@ export default function usePipes () {
 
   /**
    * @param {number} timestamp
-  */
+   */
   const getSecondsDiff = (timestamp) => (Date.now() - timestamp) / 1000
 
   /**
    * @param {number} secondsElapsed
-  */
+   */
   const getUnitAndValueDate = (secondsElapsed) => {
     for (const [unit, secondsInUnit] of Object.entries(DATE_UNITS)) {
       if (secondsElapsed >= secondsInUnit || unit === 'second') {

@@ -1,60 +1,25 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
+# build output
+dist/
+
+# generated types
+.astro/
 
 # dependencies
-/node_modules
+node_modules/
 
-# profiling files
-chrome-profiler-events*.json
-speed-measure-plugin*.json
-
-# IDEs and editors
-.c9/
-.idea/
-.project
-*.launch
-.settings/
-.classpath
-*.sublime-workspace
-
-### vscode ###
-.vscode/*
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/settings.json
-!.vscode/extensions.json
-!.vscode/css_custom_data.json
-*.code-workspace
-
-# Logs
-logs
-*.log
+# logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-lerna-debug.log*
 
-# misc
+
+# environment variables
 .env
-.env.*
-!.env.example
-/coverage
-/dist
-/dist-ssr
+.env.production
 
-### macOS ###
-# General
+# macOS-specific files
 .DS_Store
-.AppleDouble
-.LSOverride
 
-# Dump file
-*.stackdump
-
-# Folder config file
-[Dd]esktop.ini
-
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
-
-# End of https://www.toptal.com/developers/gitignore/api/
+# jetbrains setting folder
+.idea/

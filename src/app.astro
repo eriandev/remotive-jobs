@@ -1,0 +1,78 @@
+---
+import { BASE_URL } from '@/consts.ts'
+import '@/app.css'
+
+interface Props {
+  class?: string
+}
+
+const faviconImagePath = BASE_URL + '/favicon.ico'
+const previewImagePath = BASE_URL + '/preview.png'
+const description =
+  'Find the best remote job, working as a developer, customer support rep, product or sales professional...'
+
+const { class: bodyClass } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Remotive Jobs</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#ff871a" />
+
+    <link rel="apple-touch-icon" href={faviconImagePath} />
+    <link rel="icon" type="image/x-icon" sizes="48x48" href={faviconImagePath} />
+
+    <meta property="og:url" content={BASE_URL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Remotive Jobs" />
+    <meta property="og:image" content={previewImagePath} />
+    <meta property="og:description" content={description} />
+
+    <meta name="twitter:creator" content="@eriandev" />
+    <meta name="twitter:title" content="Remotive Jobs" />
+    <meta name="twitter:image" content={previewImagePath} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://eriandev.github.io" crossorigin />
+
+    <link
+      rel="preload"
+      type="text/css"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+
+    <link
+      rel="preload"
+      type="text/css"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      crossorigin="anonymous"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+
+    <link
+      rel="preload"
+      type="text/css"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap"
+      crossorigin="anonymous"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet" />
+
+    <slot name="head" />
+  </head>
+
+  <body class={bodyClass}>
+    <slot />
+  </body>
+</html>

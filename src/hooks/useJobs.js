@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
-import { API_URL } from '../utils/constants'
+import { API_URL } from '@/consts'
 
 /**
  * @param {React.Dispatch<React.SetStateAction<[]>>} setJobList
-*/
-export default function useJobs (setJobList) {
+ */
+export default function useJobs(setJobList) {
   const [nextPage, setNextPage] = useState(1)
   const [loading, setLoading] = useState(true)
   const [totalPages, setTotalPages] = useState(10)
@@ -21,7 +21,7 @@ export default function useJobs (setJobList) {
       const response = await fetch(`${API_URL}/${nextPage}/`)
       /** @type {JobResponse} */
       const jobs = await response.json()
-      const newJobs = jobs.results.map(job => ({
+      const newJobs = jobs.results.map((job) => ({
         id: job?.id,
         url: job?.url,
         tags: job?.tags,
@@ -33,12 +33,12 @@ export default function useJobs (setJobList) {
         companyLogo: job?.company_logo,
         companyName: job?.company_name,
         publicationDate: job?.publication_date,
-        requiredLocation: job?.candidate_required_location
+        requiredLocation: job?.candidate_required_location,
       }))
 
       setTotalPages(jobs.total_pages)
-      setNextPage(currentPage => currentPage + 1)
-      setJobList(previousJobs => [...previousJobs, ...newJobs])
+      setNextPage((currentPage) => currentPage + 1)
+      setJobList((previousJobs) => [...previousJobs, ...newJobs])
     } catch (error) {
       console.error(error)
     } finally {
@@ -57,7 +57,7 @@ export default function useJobs (setJobList) {
  * @prop {string=} next
  * @prop {Job[]} results
  * @prop {number} total_pages
-*/
+ */
 
 /**
  * @typedef Job
@@ -73,4 +73,4 @@ export default function useJobs (setJobList) {
  * @prop {string} company_name
  * @prop {string} publication_date
  * @prop {string} candidate_required_location
-*/
+ */

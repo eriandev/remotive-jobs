@@ -4,29 +4,37 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "lint": "eslint --fix src/**/*.{js,jsx}"
+    "astro": "astro",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "preview": "astro preview",
+    "format": "prettier --write .",
+    "build": "pnpm check && astro build",
+    "lint": "prettier --check . && eslint .",
+    "check": "astro check --tsconfig tsconfig.json"
+  },
+  "engines": {
+    "node": ">=22",
+    "pnpm": ">=8"
   },
   "dependencies": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "astro": "5.16.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
   },
   "devDependencies": {
-    "@types/react": "18.0.26",
-    "@types/react-dom": "18.0.10",
-    "@vitejs/plugin-react": "3.0.1",
-    "eslint": "8.31.0",
-    "standard": "17.0.0",
-    "tailwindcss": "3.2.4",
-    "vite": "4.0.4",
-    "vite-plugin-svgr": "2.4.0"
-  },
-  "eslintConfig": {
-    "extends": [
-      "standard",
-      "standard-jsx"
-    ]
+    "@astrojs/check": "0.9.6",
+    "@astrojs/react": "4.4.2",
+    "@tailwindcss/vite": "4.1.18",
+    "@typescript-eslint/eslint-plugin": "8.51.0",
+    "@typescript-eslint/parser": "8.51.0",
+    "eslint": "9.39.2",
+    "eslint-config-love": "140.0.0",
+    "eslint-plugin-astro": "1.5.0",
+    "prettier": "3.7.4",
+    "prettier-plugin-astro": "0.14.1",
+    "prettier-plugin-tailwindcss": "0.7.2",
+    "tailwindcss": "4.1.18",
+    "typescript": "5.9.3"
   }
 }
