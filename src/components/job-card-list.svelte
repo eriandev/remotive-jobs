@@ -28,7 +28,7 @@
 </script>
 
 <main class="grid grid-flow-row gap-2 pb-12">
-  {#each jobList as job}
+  {#each jobList as job (job.id)}
     <JobCard {job} />
   {/each}
 </main>
