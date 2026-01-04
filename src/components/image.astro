@@ -21,7 +21,7 @@ const {
   class: extraClass,
   ...restProps
 } = Astro.props
-const localResource = name ? `${BASE_URL}/${name}.png` : `${BASE_URL}/not-found.png`
+const localResource = name ? `${BASE_URL}/${name}.webp` : `${BASE_URL}/not-found.webp`
 const source = src?.startsWith('http') ? src : localResource
 
 const loading = lazy ? 'lazy' : 'eager'

@@ -7,8 +7,8 @@ const DATE_UNITS = {
 
 export function getLocationIcon(requiredLocation: string) {
   return requiredLocation === 'Worldwide' || requiredLocation === 'Anywhere'
-    ? 'worldwide-symbol.png'
-    : 'remote-symbol.png'
+    ? 'worldwide-symbol.webp'
+    : 'remote-symbol.webp'
 }
 
 export function getRelativeDate(stringDate: string, locales: string | string[] = 'en') {
