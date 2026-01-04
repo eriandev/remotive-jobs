@@ -1,2 +1,2 @@
-export const API_URL = import.meta.env.PUBLIC_API_URL
-export const BASE_URL = import.meta.env.PUBLIC_BASE_URL
+export const API_URL = 'https://eriandev.github.io/api/remotive'
+export const BASE_URL = 'https://eriandev.github.io/remotive-jobs'

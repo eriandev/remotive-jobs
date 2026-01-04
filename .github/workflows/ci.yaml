@@ -8,10 +8,6 @@ on:
 permissions:
   contents: write
 
-env:
-  PUBLIC_API_URL: ${{ vars.PUBLIC_API_URL }}
-  PUBLIC_BASE_URL: ${{ vars.PUBLIC_BASE_URL }}
-
 jobs:
   lint:
     runs-on: ubuntu-22.04
