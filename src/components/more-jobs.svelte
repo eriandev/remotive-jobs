@@ -11,7 +11,7 @@
 
 <footer class="w-full grid gap-y-2 justify-items-center">
   {#if loading}
-    <img alt="Doge" src="{BASE_URL}/doge.webp" class="w-16" />
+    <img alt="Doge" width="64" height="64" src="{BASE_URL}/doge.webp" class="w-16" />
     <span class="font-poppins">Loading more jobs...</span>
   {:else}
     <button class="btn outline w-max" onclick={action}>Load more jobs</button>

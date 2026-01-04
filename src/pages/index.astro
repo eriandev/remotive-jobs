@@ -1,9 +1,13 @@
 ---
 import Layout from '@/app.astro'
 import Header from '@/components/header.astro'
+import JobCard from '@/components/job-card.astro'
 import Container from '@/components/container.astro'
 import FilterZone from '@/components/filter-zone.astro'
 import JobCardList from '@/components/job-card-list.svelte'
+import { getJobListByPage } from '@/services/jobs'
+
+const { results } = await getJobListByPage()
 ---
 
 <Layout>
@@ -12,7 +16,11 @@ import JobCardList from '@/components/job-card-list.svelte'
   <Container class="flex flex-col gap-7 pt-7 lg:grid lg:grid-cols-[1fr_2fr] lg:gap-4">
     <FilterZone />
     <Container unlimited as="section" class="pb-20">
-      <JobCardList client:load />
+      <JobCardList client:load>
+        <>
+          {results.map((job) => <JobCard {job} />)}
+        </>
+      </JobCardList>
     </Container>
   </Container>
 </Layout>

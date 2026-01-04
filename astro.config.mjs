@@ -7,6 +7,10 @@ export default defineConfig({
   base: '/remotive-jobs/',
   integrations: [svelte()],
   build: { assets: 'assets' },
+  image: {
+    domains: ['remotive.com'],
+    remotePatterns: [{ protocol: 'https:' }],
+  },
   vite: {
     plugins: [tailwindcss()],
   },
