@@ -3,7 +3,7 @@ import type { ApiJobListResponse, JobListResponse } from '@/services/types'
 
 export async function getJobListByPage(page = 1): Promise<JobListResponse> {
   try {
-    const response = await fetch(API_URL + `/${page}/`)
+    const response = await fetch(`${API_URL}/${page}/`)
     const jobListResponse = (await response.json()) as ApiJobListResponse
 
     return {
